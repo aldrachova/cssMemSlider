@@ -114,3 +114,58 @@ input {
   background-color: var(--color-control);
   transition: all 0.4s linear;
 }
+
+.control:hover > .circle {
+  background-color: var(--color-light);
+}
+
+#slide1:checked ~ .row .controls .control:nth-child(1) .circle,
+#slide2:checked ~ .row .controls .control:nth-child(2) .circle,
+#slide3:checked ~ .row .controls .control:nth-child(3) .circle,
+#slide4:checked ~ .row .controls .control:nth-child(4) .circle,
+#slide5:checked ~ .row .controls .control:nth-child(5) .circle {
+  background-color: var(--color-dark);
+  border: 3px solid var(--color-control);
+}
+
+#slide1:checked ~ .row .controls .control:hover:nth-child(1) .circle,
+#slide2:checked ~ .row .controls .control:hover:nth-child(2) .circle,
+#slide3:checked ~ .row .controls .control:hover:nth-child(3) .circle,
+#slide4:checked ~ .row .controls .control:hover:nth-child(4) .circle,
+#slide5:checked ~ .row .controls .control:hover:nth-child(5) .circle { 
+  border: 3px solid var(--color-light);
+}
+
+.control:active{
+  opacity: 0.7;
+  transform: scale(0.9);
+}
+
+@media (max-width: 768px) {
+  .row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .controls {
+    align-self: center;
+    margin-bottom: 2rem;
+  }
+
+  .control {
+    justify-content: center;
+  }
+
+  .captions {
+    align-self: flex-start;
+  }
+
+  .caption {
+    font-size: 1.7rem;
+  }
+
+  .circle {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+}
