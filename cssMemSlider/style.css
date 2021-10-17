@@ -1,0 +1,116 @@
+:root {
+  --color-dark: #030303;
+  --color-light: #ffffff;
+  --color-control: #08aeea;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--color-dark);
+}
+
+input {
+  display: none;
+}
+
+.slider {
+  width: 60%;
+  margin: 3rem auto;
+  overflow: hidden;
+}
+
+.images {
+  margin-bottom: 5rem;
+}
+
+.images,
+.captions {
+  width: 500%;
+  height: auto;
+  display: flex;
+}
+
+.image,
+.caption {
+  width: 20%;
+  transition: all 0.5s linear;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+#slide1:checked ~ .images .image1,
+#slide1:checked ~ .row .captions .caption1 {
+  margin-left: 0;
+}
+
+#slide2:checked ~ .images .image1,
+#slide2:checked ~ .row .captions .caption1 {
+  margin-left: -20%;
+}
+
+#slide3:checked ~ .images .image1,
+#slide3:checked ~ .row .captions .caption1 {
+  margin-left: -40%;
+}
+
+#slide4:checked ~ .images .image1,
+#slide4:checked ~ .row .captions .caption1 {
+  margin-left: -60%;
+}
+
+#slide5:checked ~ .images .image1,
+#slide5:checked ~ .row .captions .caption1 {
+  margin-left: -80%;
+}
+
+.captions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.caption {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 500;
+  color: var(--color-light);
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -3rem;;
+}
+
+.control {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+}
+
+.circle {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-control);
+  transition: all 0.4s linear;
+}
